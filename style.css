@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.counter {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Карточка класса */
+.class-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+    padding: 2rem;
+}
+
+.class-details h2 {
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+.class-details p {
+    color: #718096;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #667eea;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: #f7fafc;
+    border-radius: 8px;
+}
+
+/* Галерея */
+.gallery-section {
+    margin: 3rem 0;
+}
+
+.gallery-section h2 {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #a0aec0;
+}
+
+.empty-state i {
+    margin-bottom: 1rem;
+    color: #cbd5e0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.portfolio-content {
+    padding: 1.5rem;
+}
+
+.portfolio-content h3 {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.portfolio-content p {
+    color: #718096;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-date {
+    color: #a0aec0;
+    font-size: 0.85rem;
+}
+
+/* Карточка учителя */
+.teacher-section {
+    margin: 3rem 0;
+}
+
+.teacher-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.teacher-avatar {
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.teacher-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.teacher-role {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.teacher-quote {
+    font-style: italic;
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid white;
+}
+
+/* Секция пароля */
+.password-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.password-container h3 {
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+.password-container p {
+    color: #718096;
+    margin-bottom: 1.5rem;
+}
+
+.password-input-group {
+    display: flex;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.password-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.password-btn, .logout-btn, .upload-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.password-btn:hover, .logout-btn:hover, .upload-btn:hover {
+    transform: scale(1.05);
+}
+
+.logout-btn {
+    background: #e53e3e;
+    margin: 1rem auto 0;
+}
+
+.password-status {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.password-status.success {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+}
+
+.password-status.error {
+    background: #fed7d7;
+    color: #742a2a;
+    border: 1px solid #fc8181;
+}
+
+/* Форма загрузки */
+.admin-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.admin-section h2 {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.upload-form {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: block;
+    background: #edf2f7;
+    padding: 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px dashed #cbd5e0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.file-label:hover {
+    background: #e2e8f0;
+    border-color: #667eea;
+}
+
+.file-name {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.description-input, .name-input, .date-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.description-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.description-input:focus, .name-input:focus, .date-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.upload-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.upload-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Прогресс загрузки */
+.upload-progress {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    text-align: center;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.upload-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.upload-status.success {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+}
+
+.upload-status.error {
+    background: #fed7d7;
+    color: #742a2a;
+    border: 1px solid #fc8181;
+}
+
+.upload-status.warning {
+    background: #feebc8;
+    color: #744210;
+    border: 1px solid #fbd38d;
+}
+
+.upload-info {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    margin-top: 2rem;
+}
+
+.upload-info h4 {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.upload-info p {
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.upload-info ul {
+    margin-left: 1.5rem;
+    color: #718096;
+}
+
+.upload-info code {
+    background: #edf2f7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+/* Подвал */
+footer {
+    background: #2d3748;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .teacher-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .password-input-group {
+        flex-direction: column;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-section {
+        padding: 1rem;
+    }
+}
