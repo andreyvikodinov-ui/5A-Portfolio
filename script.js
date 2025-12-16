@@ -1,10 +1,10 @@
 // Конфигурация GitHub API (заполнена внутри кода как требуется)
 const GITHUB_CONFIG = {
-    username: "andreyvikodinov-ui",
-    repository: "5A-Portfolio",
+    username: "class5a_portfolio",
+    repository: "5a-class-portfolio",
     encodedToken: "01100111 01101000 01110000 01011111 01101101 01000010 01110001 01010010 01001101 01011000 01100011 01111000 01010111 01100100 00110000 00110100 01011010 01001110 01101100 00110010 01011001 01010010 01111001 00111001 01011000 01001000 01011010 01100001 01000001 01000100 01101010 01101111 01110011 01010001 00110011 01000111 01001110 01110000 01000100 01000001",
     portfolioFile: "portfolio.json",
-    adminPassword: "9876543"
+    adminPassword: "5A_Екатерина_2024"
 };
 
 // Функция для расшифровки бинарного токена
@@ -309,8 +309,8 @@ async function loadPortfolioData() {
     } catch (error) {
         console.error('Ошибка при загрузке портфолио:', error);
         
-        // В случае ошибки возвращаем тестовые данные для демонстрации
-        return getDemoPortfolioData();
+        // В случае ошибки возвращаем пустой массив вместо демо-данных
+        return [];
     }
 }
 
@@ -482,34 +482,9 @@ confirmDeleteBtn.addEventListener('click', async () => {
 // Обработчик отмены удаления
 cancelDeleteBtn.addEventListener('click', hideDeleteConfirmation);
 
-// Функция для получения демо-данных (используется при первой загрузке или в случае ошибки)
+// Функция для получения демо-данных (возвращает пустой массив)
 function getDemoPortfolioData() {
-    return [
-        {
-            id: 1,
-            title: "Наш первый день в 5А классе",
-            description: "Этот памятный день, когда мы все собрались как новый 5А класс. Мы познакомились с нашей классной руководительницей Екатериной Николаевной.",
-            student: "Весь класс",
-            date: "01.09.2023",
-            imageData: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-        },
-        {
-            id: 2,
-            title: "Экскурсия в музей науки",
-            description: "Мы посетили музей науки, где узнали много интересного о физических явлениях и провели увлекательные эксперименты.",
-            student: "Весь класс",
-            date: "15.10.2023",
-            imageData: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-        },
-        {
-            id: 3,
-            title: "Победитель олимпиады по математике",
-            description: "Наш одноклассник Иван Петров занял первое место в школьной олимпиаде по математике. Мы очень гордимся его достижением!",
-            student: "Иван Петров",
-            date: "22.11.2023",
-            imageData: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-        }
-    ];
+    return []; // Возвращаем пустой массив вместо демо-данных
 }
 
 // Функция для отображения портфолио
