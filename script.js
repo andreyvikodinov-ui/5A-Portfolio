@@ -3,7 +3,7 @@ const GITHUB_CONFIG = {
     username: 'andreyvikodinov-ui', // Замените на ваш логин
     repo: '5A-Portfolio',     // Замените на название репозитория
     branch: 'main',
-    token: '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'    // Получите на GitHub: Settings → Developer settings → Personal access tokens
+    token: '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'    // Получите на GitHub: Settings → Developer settings → Personal access tokens
 };
 
 // Пароль для доступа к форме загрузки
