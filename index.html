@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио 5А класса</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <h1>Портфолио 5А класса</h1>
+            <p>Классный руководитель: Екатерина Николаевна</p>
+            <p>Наш дружный класс из 25 учеников</p>
+            <button id="adminToggleBtn" class="admin-btn">
+                <i class="fas fa-lock"></i> Админ-панель
+            </button>
+        </div>
+    </header>
+
+    <!-- Админ-панель -->
+    <section id="adminPanel" class="admin-panel hidden">
+        <div class="container">
+            <h2><i class="fas fa-user-shield"></i> Административная панель</h2>
+            <div class="admin-form">
+                <div class="input-group">
+                    <label for="adminPassword"><i class="fas fa-key"></i> Пароль администратора:</label>
+                    <input type="password" id="adminPassword" placeholder="Введите пароль для доступа к загрузке">
+                    <button id="adminLoginBtn" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i> Войти
+                    </button>
+                </div>
+                <div id="uploadSection" class="hidden">
+                    <h3><i class="fas fa-cloud-upload-alt"></i> Загрузить новое фото в портфолио</h3>
+                    <div class="upload-form">
+                        <div class="input-group">
+                            <label for="photoTitle">Заголовок фото:</label>
+                            <input type="text" id="photoTitle" placeholder="Например: Наш класс на экскурсии">
+                        </div>
+                        <div class="input-group">
+                            <label for="photoDescription">Описание фото:</label>
+                            <textarea id="photoDescription" placeholder="Подробное описание события или достижения..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="studentName">Имя ученика (если относится):</label>
+                            <input type="text" id="studentName" placeholder="Необязательное поле">
+                        </div>
+                        <div class="input-group">
+                            <label for="photoFile">Выберите фото:</label>
+                            <input type="file" id="photoFile" accept="image/*">
+                            <div class="file-preview" id="filePreview"></div>
+                        </div>
+                        <button id="uploadBtn" class="btn-upload">
+                            <i class="fas fa-upload"></i> Загрузить фото на сайт
+                        </button>
+                        <div id="uploadStatus" class="status-message"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основное содержимое - портфолио -->
+    <main class="container">
+        <section class="portfolio-intro">
+            <h2><i class="fas fa-star"></i> Наше портфолио</h2>
+            <p>Здесь собраны наши лучшие моменты, достижения и мероприятия 5А класса. Мы растем, учимся и развиваемся вместе!</p>
+        </section>
+
+        <div class="portfolio-controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Поиск по описанию или имени...">
+                <i class="fas fa-search"></i>
+            </div>
+            <button id="refreshPortfolio" class="btn-refresh">
+                <i class="fas fa-sync-alt"></i> Обновить портфолио
+            </button>
+        </div>
+
+        <div id="portfolioGrid" class="portfolio-grid">
+            <!-- Фотографии будут загружаться здесь -->
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Загрузка портфолио...</p>
+            </div>
+        </div>
+
+        <div id="noPhotosMessage" class="no-photos hidden">
+            <i class="fas fa-images"></i>
+            <h3>Портфолио пока пусто</h3>
+            <p>Здесь скоро появятся фотографии нашего класса.</p>
+            <p>Для загрузки фотографий воспользуйтесь админ-панелью.</p>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <p>Портфолио 5А класса • 2024 год</p>
+            <p>Классный руководитель: Екатерина Николаевна</p>
+            <div class="student-count">
+                <i class="fas fa-user-friends"></i> 25 учеников
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для просмотра фото -->
+    <div id="imageModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="Увеличенное фото">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <p id="modalStudent" class="student-info"></p>
+                <p id="modalDate" class="date-info"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
