@@ -7,7 +7,7 @@ const GITHUB_CONFIG = {
 };
 
 // Пароль для доступа (измените на свой)
-const ADMIN_PASSWORD = '5Aclass2024';
+const ADMIN_PASSWORD = '1234';
 
 // Данные учеников (можно расширить)
 const STUDENTS = [
